@@ -1,0 +1,19 @@
+#Data:
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+#Python:
+__pycache__/
+*.pyc
+
+#Virtual Environments:
+.venv/
+venv/
+
+#VS Code:
+.vscode/
+
+#Jupyter:
+.ipynb_checkpoints/
