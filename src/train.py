@@ -7,6 +7,8 @@ from evaluate import evaluate_model
 from models import train_logistic_regression, train_random_forest
 from compare import get_model_metrics, compare_models
 
+from pathlib import Path
+
 DATA_PATH = "data/raw/Telco-Customer-Churn.csv"
 
 def main():
@@ -55,6 +57,16 @@ def main():
 
     print("\nModel comparison:")
     print(comparison_df)
+
+    RESULTS_DIR = Path("results")
+    RESULTS_DIR.mkdir(exist_ok=True)
+
+    comparison_df.to_csv(
+    RESULTS_DIR / "model_comparison.csv",
+    index=False
+    )
+
+    print("\nSaved model comparison to results/model_comparison.csv")
 
 
 if __name__ == "__main__":
